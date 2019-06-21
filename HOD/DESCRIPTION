@@ -1,0 +1,11 @@
+Package: HOD
+Title: Hybrid Outlier Detection
+Version: 1.0.0
+Authors@R: person("Andrey", "Sapegin", email = "andrey@sapegin.org", role = c("aut", "cre"))
+Description: Hybrid Outlier Detection algorithm that supports mixed (continuous numerical and categorical/symbolic) data. For more information, please see Andrey Sapegin, David Jaeger, Feng Cheng and Christoph Meinel. "Towards a system for complex analysis of security events in large-scale networks". Elsevier Computers&Security, Volume 67, June 2017, pages 16-34. For even more information, see Andrey Sapegin. "High-Speed Security Log Analytics Using Hybrid Outlier Detection". Doctoral thesis, University of Potsdam, 2019.
+Depends: R (>= 3.2.5)
+Imports: data.table, doSNOW, foreach, Matrix, doParallel, parallel, slam, skmeans, e1071, iterators, bit64
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
