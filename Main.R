@@ -111,8 +111,8 @@ optimal_k_list <- determineOptimalK(discretised_numeric_columns,mapped_symbolic_
 
 optimal_k <- (optimal_k_list$optimal_k_train + optimal_k_list$optimal_k_data) %/% 2
 
-saveRDS(columnsList,opt$column_list_rds)
 saveRDS(optimal_k,opt$optimal_k_rds)
+saveRDS(columnsList,opt$column_list_rds)
 saveRDS(original_data,opt$original_data_rds)
 
 } else {
