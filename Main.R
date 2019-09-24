@@ -46,7 +46,7 @@ option_list <- list(
   make_option(c("-k", "--optimal_k_rds"), type="character", default="optimal_k.rds",
               help="RDS dump with optimal k value, only needed if start_from_anomaly==y [default optimal_k.rds]"),
   make_option(c("-u", "--original_data_rds"), type="character", default="optimal_data.rds",
-              help="RDS dump with original_data, only needed if start_from_anomaly==y [default original_data.rds]"),
+              help="RDS dump with original_data, only needed if start_from_anomaly==y [default optimal_data.rds]"),
   make_option(c("-p", "--column_list_rds"), type="character", default="columnlist.rds",
               help="RDS dump with normalised data, only needed if start_from_anomaly==y [default columnlist.rds]")
 )
@@ -111,9 +111,9 @@ optimal_k_list <- determineOptimalK(discretised_numeric_columns,mapped_symbolic_
 
 optimal_k <- (optimal_k_list$optimal_k_train + optimal_k_list$optimal_k_data) %/% 2
 
-saveRDS(columnsList,"columnlist.rds")
-saveRDS(optimal_k,"optimal_k.rds")
-saveRDS(original_data,"original_data.rds")
+saveRDS(columnsList,opt$column_list_rds)
+saveRDS(optimal_k,opt$optimal_k_rds)
+saveRDS(original_data,opt$original_data_rds)
 
 } else {
   optimal_k <- readRDS(opt$optimal_k_rds)
