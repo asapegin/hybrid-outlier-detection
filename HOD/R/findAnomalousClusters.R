@@ -63,7 +63,7 @@ findAnomalousClusters <- function(discretised_numeric_columns,mapped_symbolic_co
       
       # calculate concept vectors for all clusters
       concept_vectors <-
-        foreach(j = 1:optimal_k, .combine = c) %do% {
+        foreach(j = 1:optimal_k) %do% {
           xmean <-
             Matrix::colMeans(sparseX[which(clusters$cluster == j),,drop =
                                        FALSE],sparseResult =
@@ -116,7 +116,7 @@ findAnomalousClusters <- function(discretised_numeric_columns,mapped_symbolic_co
       
       # calculate concept vectors for all clusters
       concept_vectors <-
-        foreach(j = 1:optimal_k, .combine = c) %do% {
+        foreach(j = 1:optimal_k) %do% {
           xmean <-
             Matrix::colMeans(sparseX[which(clusters$cluster == j),,drop =
                                        FALSE],sparseResult =
